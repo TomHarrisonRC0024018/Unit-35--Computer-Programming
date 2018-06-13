@@ -32,13 +32,18 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.graphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.velocityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altitudeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accelerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.graphToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -57,12 +62,40 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // graphToolStripMenuItem
+            // 
+            this.graphToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.velocityToolStripMenuItem,
+            this.altitudeToolStripMenuItem,
+            this.accelerationToolStripMenuItem});
+            this.graphToolStripMenuItem.Name = "graphToolStripMenuItem";
+            this.graphToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.graphToolStripMenuItem.Text = "Graph";
+            // 
+            // velocityToolStripMenuItem
+            // 
+            this.velocityToolStripMenuItem.Name = "velocityToolStripMenuItem";
+            this.velocityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.velocityToolStripMenuItem.Text = "velocity";
+            // 
+            // altitudeToolStripMenuItem
+            // 
+            this.altitudeToolStripMenuItem.Name = "altitudeToolStripMenuItem";
+            this.altitudeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altitudeToolStripMenuItem.Text = "altitude";
+            // 
+            // accelerationToolStripMenuItem
+            // 
+            this.accelerationToolStripMenuItem.Name = "accelerationToolStripMenuItem";
+            this.accelerationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accelerationToolStripMenuItem.Text = "acceleration";
             // 
             // Form1
             // 
@@ -86,6 +119,10 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem graphToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem velocityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altitudeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accelerationToolStripMenuItem;
     }
 }
 

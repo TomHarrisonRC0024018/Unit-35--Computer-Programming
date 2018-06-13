@@ -15,10 +15,10 @@ namespace Unit_35__Computer_Programming
     {
         class row
         {
-            public double acceleration;
+            public double time;
             public double velocity;
             public double altitude;
-            public double dAltitude;
+            public double acceleration;
 
         
         }
@@ -29,13 +29,27 @@ namespace Unit_35__Computer_Programming
             InitializeComponent();
         }
 
-        private void calculateAltitude()
+        private void calculateVelocity()
         {
-            for (int i=1; 1 > table.Count; i++)
+            for (int i=1; i > table.Count; i++)
             {
-                double dAltitude = table[i].velocity - table[i - 1].velocity;
+                double dt = table[i].time - table[i - 1].time;
+                double dalt = table[i].altitude - table[i - 1].altitude;
+                table[i].velocity = dalt / dt;
             }
         }
+
+        private void calculatedAcceleration()
+        {
+            for (int i = 2; i > table.Count; i++)
+            {
+                double dt = table[i].time - table[i - 1].time;
+                double dv = table[i].velocity - table[i - 1].velocity;
+                table[i].acceleration = dv / dt;
+            }
+        }
+
+
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -53,10 +67,12 @@ namespace Unit_35__Computer_Programming
                         {
                             table.Add(new row());
                             string[] r = sr.ReadLine().Split(',');
-                            table.Last().acceleration = double.Parse(r[0]);
+                            table.Last().time = double.Parse(r[0]);
                             table.Last().velocity = double.Parse(r[1]);
                         }
                     }
+                    calculateAcceleration();
+                    calculatedAcceleration();
                 }
                 catch (IOException)
                 {
@@ -69,6 +85,10 @@ namespace Unit_35__Computer_Programming
                 catch (IndexOutOfRangeException)
                 {
                     MessageBox.Show(openFileDialog1.FileName + " is not in the required format");
+                }
+                catch (DivideByZeroException)
+                {
+                    MessageBox.Show(openFileDialog1.FileName + " has rows that has the same time");
                 }
             }
         }
